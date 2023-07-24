@@ -2,7 +2,7 @@
 
 Batch video inference notebook and script for mPLUG-Owl. Very barebones, but makes it quick to start using the model. Video inference with the default settings takes 15-16 GB VRAM. Lowering the num_frames to 16 or 12 (which may also have better performance) may make it easier for 16GB graphics cards.
 
-# Installtion
+# Installation
 
 Use the `install-mpeg-owl.ipynb` notebook to install mPlug-Owl. If there are issues refer to the [Main Repo](https://github.com/X-PLUG/mPLUG-Owl).
 
