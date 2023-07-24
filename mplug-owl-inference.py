@@ -79,8 +79,8 @@ if __name__ == "__main__":
     parser.add_argument("-k","--top-k", type=int, default=5, help="Top k for sampling")
     parser.add_argument("-n","--num-frames", type=int, default=25, help="Number of frames to process")
     parser.add_argument("-s","--skip-existing", type=bool, default=True, help="Skip videos that already exist in the JSON")
-    parser.add_argument("-D","--prompt", type=str, default="Describe the video in one sentence", help="Skip videos that already exist in the JSON")
-    parser.add_argument("-C","--prompt-classification", type=str, default='Briefly describe the camera motion and direction in the video, using film production terms', help="Skip videos that already exist in the JSON")
+    parser.add_argument("-D","--prompt", type=str, default="Describe the video in one sentence", help="The main descriptive prompt for the video")
+    parser.add_argument("-C","--prompt-classification", type=str, default='Briefly describe the camera motion and direction in the video, using film production terms', help="The main classifier prompt for the video")
     args = parser.parse_args()
 
     nvidia_smi.nvmlInit()
@@ -136,7 +136,7 @@ if __name__ == "__main__":
     for filename in os.listdir(args.folder):
         #Skip any item already processed in the JSON
         skip = False
-        path = folder_path + filename
+        path = args.folder + filename
         for obj in owl_captions:   
             if obj['filename'] == path and skip_existing:
                 print(f"Skipping {filename} as it already exists in the JSON")
