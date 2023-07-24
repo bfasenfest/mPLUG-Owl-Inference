@@ -1,6 +1,6 @@
 # mPLUG-Owl-Inference
 
-Batch video inference notebook and script for mPLUG-Owl
+Batch video inference notebook and script for mPLUG-Owl. Very barebones, but makes it quick to start using the model. Video inference with the default settings takes 15-16 GB VRAM. Lowering the num_frames to 16 or 12 (which may also have better performance) may make it easier for 16GB graphics cards.
 
 # Installtion
 
@@ -11,7 +11,6 @@ The script replaces the model weights due to the HF model being out of date due 
 If you place the videos files you would like processed in the "videos" folder you can run the `mplug-owl-inference.py` script to process all the videos in the folder. Otherwise you can pass arguments to the script to process a different folder.
 
 ```
-
 usage: mplug-owl-inference
 options:
 > -h, --help show this help message and exit
